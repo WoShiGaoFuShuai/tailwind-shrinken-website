@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: hsl(257, 7%, 63%);
+  transform: rotate(0) translateY(3px);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(10px);
+}
+
+.hamburger-bottom {
+  transform: translateY(17px);
+}
+
+.open .hamburger-top {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.blue-btn {
+  @apply ml-6 px-8 py-3 bg-cyan rounded-full font-bold text-white hover:opacity-70;
+}
+
+.blue-btn-lg {
+  @apply py-5 px-10 ml-0 text-2xl self-center lg:self-start;
+}
+
+.result-container {
+  @apply flex flex-col bg-white rounded-lg p-6 text-center md:flex-row md:items-center;
+}
+
+.link-top {
+  @apply font-bold max-w-[270px] break-all mx-auto md:mx-0 md:mr-auto;
+}
+
+.result-btn {
+  @apply bg-cyan text-white py-2 px-8 mt-2 rounded-lg self-center md:ml-4 hover:opacity-70 focus:outline-none;
+}
+
+#boost {
+  background-image: url('../images/bg-boost-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.stats-box-wrapper {
+  @apply bg-white p-6 relative rounded-lg md:text-left;
+}
+
+.stats-img-wrapper {
+  @apply absolute -top-10 left-1/2 -translate-x-1/2 md:left-20;
+}
+
+.stats-img-div {
+  @apply bg-black rounded-full w-20 h-20 relative;
+}
+
+.stats-img {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+#first-box {
+  margin-top: 0px;
+}
+
+#second-box {
+  margin-top: 96px;
+}
+
+#third-box {
+  margin-top: 96px;
+}
+
+@media (min-width: 768px) {
+  #boost {
+    background-image: url('../images/bg-boost-desktop.svg');
+  }
+
+  #second-box {
+    margin-top: 36px;
+  }
+
+  #third-box {
+    margin-top: 72px;
+  }
+}
+
+.footer-item {
+  @apply flex flex-col text-grayishViolet  text-center;
+}
+
+.footer-title {
+  @apply text-white font-bold mb-5;
+}
+
+.footer-links-wrapper {
+  @apply flex flex-col space-y-3;
+}
+
+.footer-link {
+  @apply hover:text-cyan;
+}
+
+.footer-img:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(58%) saturate(5200%)
+    hue-rotate(149deg) brightness(96%) contrast(95%);
+}
